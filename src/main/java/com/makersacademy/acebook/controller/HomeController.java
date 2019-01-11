@@ -24,12 +24,31 @@ public class HomeController {
 
 	@RequestMapping(value = "/greeting")
 	@GetMapping("/greeting")
-	public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+	public String greeting(@RequestParam(name="name", required=true, defaultValue="pizza") String name,
+						   @RequestParam(name="surname", required=true, defaultValue="cats") String surname,
+						   Model model) {
 		model.addAttribute("name", name);
+		model.addAttribute("surname", surname);
 
 		return "greeting";
 	}
 
+	@RequestMapping(value = "/getapost")
+	@GetMapping("/getapost")
+	public String getapost(Model model) {
+		Post hardPost = new Post("This is a string");
 
+		System.out.println(postRepository.findAll());
+		for (Post post: postRepository.findAll()) {
+			System.out.println(post);
+		}
+		System.out.println(postRepository.findById(1L));
+		System.out.println(postRepository.findById(1L).get().getContent());
+
+		model.addAttribute("hardPost", hardPost);
+		model.addAttribute("postRepository", postRepository);
+
+		return "getapost";
+	}
 
 }

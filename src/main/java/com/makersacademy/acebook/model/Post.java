@@ -24,4 +24,7 @@ public class Post {
         this.content = content;
     }
 
+    public String getContent() {
+        return content;
+    }
 }

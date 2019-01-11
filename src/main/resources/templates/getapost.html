@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Post</title>
+</head>
+<body>
+    <p>Text on page</p>
+    <p th:text="${hardPost.getContent()}" />
+    <p th:text="${postRepository.findById(1L).get().getContent()}" />
+    <p>More text on page</p>
+</body>
+</html>
