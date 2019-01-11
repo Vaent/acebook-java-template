@@ -47,6 +47,10 @@ public class HomeController {
 	}
 
 	//Create a new GET endpoint which lists all the posts
-
+    @GetMapping(value = "/allposts")
+    public String allposts(Model model){
+	    model.addAttribute("postRepository", postRepository);
+	    return "allposts";
+    }
 
 }
