@@ -1,2 +1,2 @@
-ALTER TABLE posts
-ADD COLUMN title varchar(100);
+--ALTER TABLE posts
+--ADD COLUMN votes int;
