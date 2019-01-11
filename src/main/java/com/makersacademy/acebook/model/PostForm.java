@@ -3,8 +3,11 @@ package com.makersacademy.acebook.model;
 public class PostForm {
 
     private String content;
-    public PostForm(String content) {
+    private int votes;
+
+    public PostForm(String content, int votes) {
         this.content = content;
+        this.votes = votes;
     }
     public String getContent() {
         return content;
@@ -14,5 +17,12 @@ public class PostForm {
         this.content = content;
     }
 
+    public int getVotes() {
+        return votes;
+    }
+
+    public void setVotes(int votes) {
+        this.votes = votes;
+    }
 
 }

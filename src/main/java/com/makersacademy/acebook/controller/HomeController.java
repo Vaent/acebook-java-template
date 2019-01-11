@@ -34,7 +34,7 @@ public class HomeController {
 
 	@GetMapping("/post")
 	public String post(Model model) {
-		model.addAttribute("post", new PostForm("change me"));
+		model.addAttribute("post", new PostForm("change me", 0));
 		return "postForm";
 	}
 
