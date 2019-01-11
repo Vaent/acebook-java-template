@@ -17,15 +17,21 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String content;
+    private int votes;
 
     private Post() {
     }
 
-    public Post(String content) {
+    public Post(String content, int votes) {
         this.content = content;
+        this.votes = votes;
     }
 
     public String getContent() {
         return content;
+    }
+
+    public int getVotes() {
+        return votes;
     }
 }

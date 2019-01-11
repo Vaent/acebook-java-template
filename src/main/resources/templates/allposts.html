@@ -7,6 +7,7 @@
 <body>
     <div th:each="post: ${postRepository.findAll()}">
         <p th:text="${post.getContent()}" />
+        <p th:text="${post.getVotes()}" />
     </div>
 </body>
 </html>
